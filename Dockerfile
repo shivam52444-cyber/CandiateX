@@ -21,7 +21,7 @@ RUN pip install --upgrade pip && \
 COPY . .
 
 # IMPORTANT: keep 8501 exposed (internal reference)
-EXPOSE 8501
+EXPOSE 7860
 
 # CRITICAL FIX: use only Railway PORT
-CMD ["sh", "-c", "streamlit run frontend.py --server.address=0.0.0.0 --server.port=${PORT}"]
+CMD ["streamlit", "run", "frontend.py", "--server.address=0.0.0.0", "--server.port=7860"]
